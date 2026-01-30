@@ -1,0 +1,202 @@
+.settings-page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.settings-header {
+    margin-bottom: 2.5rem;
+}
+
+.settings-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.settings-header p {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 1.1rem;
+}
+
+.settings-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.settings-card.danger-zone {
+    border-color: rgba(255, 71, 87, 0.3);
+}
+
+.card-header {
+    padding: 1.5rem;
+    background: rgba(255, 71, 87, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 71, 87, 0.1);
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #ff4757;
+}
+
+.danger-icon {
+    color: #ff4757;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.setting-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.setting-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.danger-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.danger-btn:hover {
+    background: #ff6b81;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+}
+
+.confirmation-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.confirm-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ff4757;
+}
+
+.confirm-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.status-modal {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1.25rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.status-modal.success {
+    background: #2ed573;
+}
+
+.status-modal.error {
+    background: #ff4757;
+}
+
+.status-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    margin-left: 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .setting-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .setting-action {
+        width: 100%;
+    }
+    
+    .danger-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .confirmation-group {
+        align-items: center;
+        width: 100%;
+    }
+    
+    .confirm-btn {
+        width: 100%;
+    }
+}

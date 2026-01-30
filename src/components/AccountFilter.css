@@ -1,0 +1,138 @@
+.account-filter {
+    position: relative;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid var(--border-color);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    border-color: var(--color-primary);
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--text-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: var(--space-sm);
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(30, 41, 59, 0.95) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    min-width: 280px;
+    z-index: 100;
+    overflow: hidden;
+    animation: fadeIn 0.15s ease;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.filter-actions button {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid transparent;
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.filter-actions button:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+.filter-list {
+    max-height: 320px;
+    overflow-y: auto;
+    padding: var(--space-sm);
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.filter-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateX(2px);
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-muted);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+}
+
+.checkbox.checked {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+.filter-item span {
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color var(--transition-base);
+}
+
+.filter-item:hover span {
+    color: var(--text-primary);
+}
+
+.no-accounts {
+    padding: var(--space-xl);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}

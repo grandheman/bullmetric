@@ -1,0 +1,183 @@
+.calendar-container {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(30, 41, 59, 0.8) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+}
+
+.week-day-label {
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: var(--space-sm);
+    font-size: 0.85rem;
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 1fr;
+    /* Distribute rows evenly */
+    gap: 1px;
+    background-color: var(--border-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1;
+    /* Take remaining space */
+    min-height: 0;
+}
+
+.calendar-day {
+    background: rgba(30, 41, 59, 0.6);
+    padding: var(--space-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    border-radius: var(--radius-sm);
+}
+
+.calendar-day:hover {
+    background: rgba(59, 130, 246, 0.12);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-sm);
+}
+
+.other-month {
+    background-color: rgba(22, 27, 34, 0.5);
+    opacity: 0.5;
+}
+
+.today {
+    background-color: rgba(31, 111, 235, 0.1);
+}
+
+.day-number {
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    font-family: var(--font-heading);
+    color: var(--text-secondary);
+}
+
+.today .day-number {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.day-pnl {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    pointer-events: none;
+}
+
+.trade-count {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    position: absolute;
+    bottom: var(--space-sm);
+    right: var(--space-sm);
+    background: rgba(59, 130, 246, 0.2);
+    padding: 2px 8px;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.positive-day .day-pnl {
+    color: var(--success-color);
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+}
+
+.negative-day .day-pnl {
+    color: var(--danger-color);
+    text-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+}
+
+.positive-day {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.08) 100%) !important;
+    border-bottom: 3px solid var(--success-color);
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+}
+
+.negative-day {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.08) 100%) !important;
+    border-bottom: 3px solid var(--danger-color);
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.2);
+}
+
+@media (max-width: 600px) {
+    .calendar-container {
+        padding: 0.25rem;
+    }
+
+    .week-day-label {
+        font-size: 0.7rem;
+        padding: 0.25rem 0;
+    }
+
+    .calendar-day {
+        padding: 0.1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Center content vertically */
+        align-items: center;
+        min-height: 50px;
+        /* Ensure minimum touch target/visibility */
+    }
+
+    .day-number {
+        font-size: 0.65rem;
+        position: static;
+        /* Remove absolute positioning */
+        margin-bottom: 2px;
+        width: 100%;
+        text-align: left;
+        padding-left: 2px;
+    }
+
+    .day-pnl {
+        position: static;
+        /* Remove absolute positioning */
+        transform: none;
+        /* Remove centering transform */
+        font-size: 0.65rem;
+        width: 100%;
+        text-align: center;
+        padding: 1px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.2;
+    }
+
+    .trade-count {
+        display: none;
+    }
+}

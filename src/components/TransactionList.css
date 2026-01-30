@@ -1,0 +1,85 @@
+.transaction-list-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem;
+    height: 100%;
+    /* Fill available height */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-list-container.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b949e;
+    font-style: italic;
+}
+
+.transaction-list-container h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.count {
+    color: #8b949e;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.transaction-list {
+    flex: 1;
+    overflow-y: auto;
+    /* Custom scrollbar works best for fixed height/flex areas */
+}
+
+.transaction-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 0.5rem 0.75rem 0;
+    /* Add right padding */
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.trans-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.trans-symbol {
+    font-weight: 700;
+}
+
+.trans-pnl {
+    font-weight: 600;
+}
+
+.trans-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #8b949e;
+}
+
+.trans-account {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.text-green {
+    color: #3fb950;
+}
+
+.text-red {
+    color: #f85149;
+}

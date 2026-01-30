@@ -1,0 +1,158 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 65% 35%;
+    gap: var(--space-lg);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Calendar Section (Top Left) */
+.dashboard-calendar-section {
+    grid-column: 1 / 2;
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(30, 41, 59, 0.8) 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-md);
+}
+
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.calendar-controls h2 {
+    margin: 0;
+    min-width: 200px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.nav-btn {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Sidebar (Top Right) */
+.dashboard-sidebar {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Chart Section (Bottom - Spans Full Width) */
+.dashboard-chart-section {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(30, 41, 59, 0.8) 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    border: 1px solid var(--border-color);
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-md);
+}
+
+.loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    /* 1. Calendar */
+    .dashboard-calendar-section {
+        order: 1;
+        height: auto;
+        min-height: 400px;
+        /* Ensure visible calendar area */
+        overflow: visible;
+    }
+
+    .calendar-container {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .calendar-grid {
+        min-height: 300px;
+        /* Ensure grid has space */
+    }
+
+    /* 2. Chart */
+    .dashboard-chart-section {
+        order: 2;
+        height: 350px;
+        /* Good height for mobile chart */
+        overflow: visible;
+        flex-shrink: 0;
+    }
+
+    .chart-container {
+        height: 100%;
+    }
+
+    /* 3. Stats & Trades */
+    .dashboard-sidebar {
+        order: 3;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* Adjust Transaction List for mobile */
+    .transaction-list-container {
+        height: 400px;
+        /* Fixed height for scrolling list on mobile */
+    }
+}
+
+/* Reusing colors from global/other css, but defining here if scoped needed */
+.text-green {
+    color: #3fb950;
+}
+
+.text-red {
+    color: #f85149;
+}

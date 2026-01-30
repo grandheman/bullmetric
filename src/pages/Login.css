@@ -1,0 +1,215 @@
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    /* Fallback */
+    background: radial-gradient(circle at 50% 50%, #1a202c 0%, #0d1117 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background glow effect behind the card */
+.login-page::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(31, 111, 235, 0.15) 0%, rgba(35, 134, 54, 0.05) 50%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.login-card {
+    background: rgba(22, 27, 34, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+}
+
+/* Inner glow border hint */
+.login-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.brand-logo {
+    width: auto;
+    height: 160px;
+    object-fit: contain;
+}
+
+.app-title-hidden {
+    display: none;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-size: 0.85rem;
+    color: #8b949e;
+    margin-left: 0.25rem;
+}
+
+.form-input {
+    background: rgba(13, 17, 23, 0.8);
+    border: 1px solid rgba(48, 54, 61, 0.8);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #238636;
+    box-shadow: 0 0 0 3px rgba(35, 134, 54, 0.2);
+    background: rgba(13, 17, 23, 1);
+}
+
+.error-message {
+    background-color: rgba(218, 54, 51, 0.1);
+    color: #f85149;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid rgba(218, 54, 51, 0.2);
+}
+
+.login-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #2ea043 0%, #238636 100%);
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(35, 134, 54, 0.4);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    color: #8b949e;
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: rgba(48, 54, 61, 0.5);
+}
+
+.divider span {
+    padding: 0 0.75rem;
+}
+
+.google-btn {
+    background-color: white;
+    color: #1f2937;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.google-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.forgot-password {
+    text-align: center;
+    display: block;
+    color: #8b949e;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: var(--primary-color);
+}
+
+.signup-link {
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.signup-link a {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-left: 0.25rem;
+}
+
+.signup-link a:hover {
+    color: var(--primary-color);
+}

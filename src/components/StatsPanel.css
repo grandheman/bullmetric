@@ -1,0 +1,111 @@
+.stats-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(30, 41, 59, 0.8) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    height: fit-content;
+    box-shadow: var(--shadow-md);
+}
+
+.stats-panel h3 {
+    grid-column: 1 / -1;
+    margin: 0 0 var(--space-sm) 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.stat-card:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.stat-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: var(--space-xs);
+    font-weight: 400;
+}
+
+.positive {
+    background: rgba(16, 185, 129, 0.08);
+    border-left: 3px solid var(--success-color);
+}
+
+.positive .stat-value,
+.text-green .stat-value {
+    color: var(--success-color);
+}
+
+.positive:hover {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.negative {
+    background: rgba(239, 68, 68, 0.08);
+    border-left: 3px solid var(--danger-color);
+}
+
+.negative .stat-value,
+.text-red .stat-value {
+    color: var(--danger-color);
+}
+
+.negative:hover {
+    background: rgba(239, 68, 68, 0.15);
+}
