@@ -1,16 +1,36 @@
-# React + Vite
+# BullMetric (Trade Tracker Pro)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BullMetric is a professional trading journal and analytics dashboard designed to help traders track their performance, identify patterns, and improve their profitability.
 
-Currently, two official plugins are available:
+## Features
+*   **Dashboard**: Overview of your trading performance.
+*   **Trade Journal**: Detailed logging of trades.
+*   **Analytics**: Visual charts and statistics (PnL, Win Rate, etc.).
+*   **Calendar View**: Daily breakdown of trading activity.
+*   **Account Management**: Support for multiple accounts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to Download
 
-## React Compiler
+### Option 1: Download ZIP (Easiest)
+1.  Click the green **Code** button at the top right of the repository page.
+2.  Select **Download ZIP**.
+3.  Extract the ZIP file to a folder on your computer.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Option 2: Git Clone (For Developers)
+If you have Git installed, run:
+```bash
+git clone https://github.com/grandheman/bullmetric.git
+```
 
-## Expanding the ESLint configuration
+## Setup & Deployment
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**After downloading**, you need to set up your own Firebase backend to use the app.
+
+👉 **[Read the Deployment Guide](DEPLOYMENT.md)**
+
+We have included an automated script (`setup_and_deploy.bat`) to make this process as easy as possible. Check the guide for details.
+
+## Tech Stack
+*   React + Vite
+*   Firebase (Authentication, Firestore, Hosting)
+
